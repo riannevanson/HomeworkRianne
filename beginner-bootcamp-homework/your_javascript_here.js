@@ -13,13 +13,19 @@ var hero = {
 // Game logic
 
 function rest(creature){
-  hero.health
+  creature.health = 10
+  return creature
 }
 
+// console.log(rest(hero))
 
-function pickUpItem(){
 
+
+function pickUpItem(creature, item){
+creature.inventory.push(item)
+return creature
 }
+// console.log(pickUpItem(hero, "knife"))
 
 
 function dealDamage(){
