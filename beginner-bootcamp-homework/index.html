@@ -10,14 +10,23 @@
     <body>
         <h1>Good luck! You can do it!</h1>
 
-<div class="buttonContainer">
-<div class="buttonRest">
-</div>
-<div class="buttonWeapon">
-</div>
-<div class="enemy">
-</div>
-<div class="equipment">
+<div class="buttonContainer" id="buttonContainer">
+
+  <div class="buttonRest" id="buttonRest" onclick = "rest(hero)">
+    <img src="images/Bed-Icon.png"></img>
+  </div>
+
+  <div class="buttonWeapon" id="buttonWeapon" onclick = "pickUpItem(hero, {type: "gun", damage: 2})">
+    <img src="images/Gun-icon.png"></img>
+  </div>
+
+  <div class="enemy">
+    <img src="images/devil-mad-icon.png"></img>
+  </div>
+
+  <div class="equipment">
+    <img src="images/Hiking-Backpack-icon.png"></img>
+  </div>
 
 
 
