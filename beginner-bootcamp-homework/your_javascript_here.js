@@ -104,36 +104,43 @@ var battleEvent = document.getElementById('buttonEnemy');
 battleEvent.onclick = function(event) {
 
   function doBattle(heroicCreature, creature){
-    if (heroicCreature !== "heroic") {
-      console.log('heroicCreature must play!')
+    if (creature.health !== 0) {
       return null
     }
-
-    if (heroicCreature.health > 0 && creature.health > 0){
-    dealDamage(heroicCreature, creature)
-
-      if(heroicCreature.health > 0 && creature.health > 0){
-        doBattle(heroicCreature, creature)
-      } else if(creature.health > 0){
-
-      return heroicCreature
-    console.log(heroicCreature)
-      } else if(heroicCreature.health > 0){
-
-      return hero
-      console.log(hero)
+    else if (heroicCreature.health > 0 && creature.health > 0){
+      console.log('go again!')
+        dealDamage(heroicCreature, creature)
       }
-
-    } else if(creature.health > 0){
-    heroicCreature = 'heroic'
-    doBattle(heroicCreature, creature)
-    } else if(heroicCreature.health > 0){
-    hero = 'heroic'
-    doBattle(heroicCreature, creature)
-    }
-
+      else{
+        dealDamage(heroicCreature, creature)
+      }
+  }
 }
-console.log(doBattle(badguy,hero))
+//---------tryout battle-----------
+//     else if (heroicCreature.health > 0 && creature.health > 0){
+//     dealDamage(heroicCreature, creature)
+//
+//       if(heroicCreature.health > 0 && creature.health > 0){
+//         doBattle(heroicCreature, creature)
+//       } else if(creature.health > 0){
+//
+//       return heroicCreature
+//     console.log(heroicCreature)
+//       } else if(heroicCreature.health > 0){
+//
+//       return hero
+//       console.log(hero)
+//       }
+//
+//     } else if(creature.health > 0){
+//     heroicCreature = 'heroic'
+//     doBattle(heroicCreature, creature)
+//     } else if(heroicCreature.health > 0){
+//     hero = 'heroic'
+//     doBattle(heroicCreature, creature)
+//     }
+//
+// }
 
 var AddEquipWeapon = document.getElementById('equipWeapon');
 AddEquipWeapon.addEventListener('click', function(event) {
