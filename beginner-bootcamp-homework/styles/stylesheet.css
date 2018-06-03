@@ -1,7 +1,12 @@
-
+p {
+  height: 100px;
+  width: 100%;
+text-align: center;
+}
 
 h1 {
   color:red;
+  text-align: center;
 }
 .buttonContainer{
   display: flex;

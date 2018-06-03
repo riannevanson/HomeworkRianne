@@ -8,7 +8,11 @@
         <link href="styles/stylesheet.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <h1>Good luck! You can do it!</h1>
+        <h1>Best game ever!</h1>
+
+        <p class="statsBlock" id="statsBlock" onclick = "displayStats(hero)">
+          Click me to see your stats!
+        </p>
 
 <div class="buttonContainer" id="buttonContainer">
 
@@ -24,14 +28,15 @@
     <img src="images/devil-mad-icon.png"></img>
   </div>
 
-  <div class="equipment">
+  <div class="equipment" id="equipWeapon">
     <img src="images/Hiking-Backpack-icon.png"></img>
   </div>
 
 
-
-
 </div>
+<p class="inventoryBlock" id="inventoryBlock" onclick = "displayInventory(hero)">
+  Click me to see your inventory!
+</p>
 
 
         <script src="your_javascript_here.js"></script>
