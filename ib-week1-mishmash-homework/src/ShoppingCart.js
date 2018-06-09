@@ -1,34 +1,32 @@
 class ShoppingCart {
-  constructor(itemName, quantity, price) {
-    this.name = itemName;
-    this.getItemArray = [];
-
+  constructor() {
+    this.items = [];
   }
 
   getItems() {
-    return this.getItemArray.concat(this.addItemArray);
+    return this.items;
   }
 
-  addItem(itemName, quantity, price) {
-    this.addItemArray = [];
-    var newItem =
-      {
-        name: itemName,//something with this?
-        quantity: quantity,
-        pricePerUnit: price
-      }
-    ;
-    return this.addItemArray.concat(newItem);
+  addItem(pItemName, pQuantity, pPrice) {
+      var newItem = {
+      name: pItemName, //something with this?
+      quantity: pQuantity,
+      pricePerUnit: pPrice
+    };
+    this.items.push(newItem);
   }
 
+  clear(items){
+    this.items.map(items =>
+    return [])
+  }
 }
 
-let cart = new ShoppingCart();
-console.log(cart.addItem("yu", 3, 2));
-console.log(cart.addItem())
+const cart = new ShoppingCart();
+cart.addItem("yu", 3, 2 + 'addItems');
 console.log(cart.getItems());
 //
-//
+////
 //     this.getItem.push(getItem)
 //     // We should be able to call
 //     // `cart.addItem(itemName, quantity, price)`,
