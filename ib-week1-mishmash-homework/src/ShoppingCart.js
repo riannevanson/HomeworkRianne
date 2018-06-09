@@ -1,19 +1,32 @@
-class Cart {
-  constructor(cart) {
-    this.cart = cart;
+class ShoppingCart {
+  constructor(itemName, quantity, price) {
+    this.name = itemName;
+    this.getItemArray = [];
+
   }
 
-  getItems(item) {
-    let emptyArray = []
-    return emptyArray;
+  getItems() {
+    return this.getItemArray.concat(this.addItemArray);
   }
+
   addItem(itemName, quantity, price) {
-  const newItemsArray = cart.getItems.map(Item => Item )
+    this.addItemArray = [];
+    var newItem =
+      {
+        name: itemName,//something with this?
+        quantity: quantity,
+        pricePerUnit: price
+      }
+    ;
+    return this.addItemArray.concat(newItem);
+  }
 
-    }
 }
 
-
+let cart = new ShoppingCart();
+console.log(cart.addItem("yu", 3, 2));
+console.log(cart.addItem())
+console.log(cart.getItems());
 //
 //
 //     this.getItem.push(getItem)
@@ -30,32 +43,4 @@ class Cart {
 // //   }
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-module.exports =  Cart
+module.exports = ShoppingCart;
