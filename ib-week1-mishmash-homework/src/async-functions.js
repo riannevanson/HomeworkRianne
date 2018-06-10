@@ -2,14 +2,13 @@ function giveItBackLater(value, callback) {
   function loadComplete() {
     callback(value);
   }
-    setTimeout(loadComplete, 1000);
+  setTimeout(loadComplete, 1000);
 }
-
 
 const promiseToGiveItBackLater = value => {
   return new Promise((resolve, reject) => {
     function loadComplete() {
-     if (value === undefined) {
+      if (value === undefined) {
         reject("value is not loaded yet!");
       }
       resolve(value);
@@ -19,13 +18,12 @@ const promiseToGiveItBackLater = value => {
   });
 };
 
-
 const addSomePromises = pSomePromise => {
   return new Promise((resolve, reject) => {
     function loadComplete() {
       if (pSomePromise === "bar") {
         reject("bar");
-      } else if (pSomePromise === "foo"){
+      } else if (pSomePromise === "foo") {
         resolve("foo");
       }
     }
@@ -33,17 +31,18 @@ const addSomePromises = pSomePromise => {
   });
 };
 
-
-
 const outputPromise = addSomePromises("bar")
-.then(function(result) {
-return result + result})
-.then(function(err) {
-  return err + err + err
-});
+.then(
+  function(result) {
+    console.log(result + result);
+  },
+  function(err) {
+    console.log(err + err + err);
+  }
+);
 
-
-
- module.exports = { giveItBackLater,
-      addSomePromises,
-      promiseToGiveItBackLater }
+module.exports = {
+  giveItBackLater,
+  addSomePromises,
+  promiseToGiveItBackLater
+};
