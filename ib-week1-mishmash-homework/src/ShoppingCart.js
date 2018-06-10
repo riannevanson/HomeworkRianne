@@ -1,4 +1,4 @@
-class ShoppingCart {
+class ShoppingCart{
   constructor() {
     this.items = [];
   }
@@ -9,7 +9,7 @@ class ShoppingCart {
 
   addItem(pItemName, pQuantity, pPrice) {
     var newItem = {
-      name: pItemName, //something with this?
+      name: pItemName,
       quantity: pQuantity,
       pricePerUnit: pPrice
     };
@@ -19,46 +19,29 @@ class ShoppingCart {
   clear() {
     this.items = this.items.filter(item => item !== item);
   }
-  clone(pShoppingCart, pNewName) {
+  clone(pShoppingCart) {
     function cloneCart(pShoppingCart) {
-      let pNewName = pShoppingCart =>
-        Object.create(pShoppingCart).map(x => x);
-    return pNewName
+      let cloneCart = pShoppingCart => Object.create(pShoppingCart).map(x => x);
+      return cloneCart;
     }
-
-return pNewName
+    return cloneCart;
   }
 }
-
-const cart = new ShoppingCart();
-cart.addItem("yu", 3, 2 + "addItems");
-// console.log(cart.getItems());
-// console.log(cart);
-cart.clone(cart, pietje);
-const cloneCart = new ShoppingCart();
-pietje.clear();
-console.log(cart);
-console.log(pietje);
-pietje.addItem("yu", 3, 2 + "addItems");
-cart.clear();
-console.log(cart);
-console.log(pietje);
-
-
-
 //
-//     this.getItem.push(getItem)
-//     // We should be able to call
-//     // `cart.addItem(itemName, quantity, price)`,
-//     // which adds a new item to an internal array.
-//     // Subsequent calls to `cart.getItems()` should return the added items.
-//     // Items in the array should be in this format:
-// //     //     {
-//       name: "Name of the item",
-//       quantity: 1,
-//       pricePerUnit: 99.99
-//     }
-// //   }
-// }
+// const cart = new ShoppingCart();
+// cart.addItem("yu", 3, 2 + "addItems");
+// // console.log(cart.getItems());
+// // console.log(cart);
+// cart.clone(cart);
+// const cloneCart = new ShoppingCart();
+// cloneCart.clear();
+// //console.log(cart);
+// //console.log(cloneCart);
+// cloneCart.addItem("yu", 3, 2 + "addItems");
+// cart.clear();
+// console.log(cart);
+// console.log(cloneCart);
+
+
 
 module.exports = { ShoppingCart };

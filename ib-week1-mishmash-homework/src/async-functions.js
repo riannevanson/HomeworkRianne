@@ -6,26 +6,40 @@
 // }
 //
 //
-// const promiseToGiveItBackLater = value => {
-//   return new Promise((resolve, reject) => {
-//     function loadComplete() {
-//       if (giveItBackLater[values, callback] === values) {
-//         reject(values[value] + values[values] + values[values]);
-//       }
-//       resolve(values[value] + values[values]);
-//     }
-//
-//     setTimeout(loadComplete, 1000);
-//   });
-// };
-//
-//
-//
-// const outputPromise = addSomePromises(somePromise)
-//
-//
-//
-//
+const promiseToGiveItBackLater = value => {
+  return new Promise((resolve, reject) => {
+    function loadComplete() {
+  //    if (something) {
+        reject();
+      }
+      resolve(values[value] + values[values]);
+    }
+
+    setTimeout(loadComplete, 1000);
+  });
+};
+
+const addSomePromises = pSomePromise => {
+  return new Promise((resolve, reject) => {
+    if(pSomePromise === "foo"){
+      reject(pSomePromise + pSomePromise)
+    }
+    if(pSomePromise === "bar"){
+      resolve(pSomePromise + pSomePromise + pSomePromise)
+    }
+  })
+}
+
+
+const outputPromise = addSomePromises(somePromise)
+.then(pSomePromise => "foo")
+.then(author => console.log(author.name))
+.catch(error => console.log(error))
+
+
+
+
+
 
 
 
