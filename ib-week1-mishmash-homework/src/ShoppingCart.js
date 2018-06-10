@@ -1,4 +1,4 @@
-class ShoppingCart{
+module.exports = class ShoppingCart {
   constructor() {
     this.items = [];
   }
@@ -41,7 +41,3 @@ class ShoppingCart{
 // cart.clear();
 // console.log(cart);
 // console.log(cloneCart);
-
-
-
-module.exports = { ShoppingCart };
