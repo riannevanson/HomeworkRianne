@@ -1,5 +1,6 @@
 class ShoppingCart {
-  constructor() {
+  constructor(cart) {
+    this.name = name
     this.items = [];
   }
 
@@ -16,14 +17,22 @@ class ShoppingCart {
     this.items.push(newItem);
   }
 
-  clear(items){
-    this.items.map(items =>
-    return [])
+  clear(){
+    this.items = this.items.filter(item =>
+    item !== item)
+
   }
+  clone()
+
+
+
 }
 
 const cart = new ShoppingCart();
 cart.addItem("yu", 3, 2 + 'addItems');
+cart.addItem("yuaaaaa", 4, 5.95 + 'addItems');
+console.log(cart.getItems());
+cart.clear()
 console.log(cart.getItems());
 //
 ////
@@ -41,4 +50,4 @@ console.log(cart.getItems());
 // //   }
 // }
 
-module.exports = ShoppingCart;
+module.exports = ShoppingCart
