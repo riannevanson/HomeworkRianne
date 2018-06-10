@@ -1,6 +1,5 @@
 class ShoppingCart {
-  constructor(cart) {
-    this.name = name
+  constructor() {
     this.items = [];
   }
 
@@ -9,7 +8,7 @@ class ShoppingCart {
   }
 
   addItem(pItemName, pQuantity, pPrice) {
-      var newItem = {
+    var newItem = {
       name: pItemName, //something with this?
       quantity: pQuantity,
       pricePerUnit: pPrice
@@ -17,25 +16,41 @@ class ShoppingCart {
     this.items.push(newItem);
   }
 
-  clear(){
-    this.items = this.items.filter(item =>
-    item !== item)
-
+  clear() {
+    this.items = this.items.filter(item => item !== item);
   }
-  clone()
+  clone(pCartYouWantToClone) {
+    const cloneCart =  [
+      Object.assign(Object.create(pCartYouWantToClone), pCartYouWantToClone)
+    ];
 
 
-
+    pCartYouWantToClone.map(x => x)
+    console.log(cloneCart2)
+//     function newCloneFunction(cloneC) {
+//     let  cloneCart = cloneC.map(clone => clone);
+//     return cloneCart
+//     }
+// return newCloneFunction(cloneC)
+  }
 }
 
 const cart = new ShoppingCart();
-cart.addItem("yu", 3, 2 + 'addItems');
-cart.addItem("yuaaaaa", 4, 5.95 + 'addItems');
+
+cart.addItem("yu", 3, 2 + "addItems");
+cart.addItem("yuaaaaa", 4, 5.95 + "addItems");
 console.log(cart.getItems());
-cart.clear()
+console.log(cart)
+cart.clone(cart);
+const cloneCart = new ShoppingCart();
+
 console.log(cart.getItems());
+cart.clear();
+console.log(cart.getItems());
+console.log(cloneCart.getItems());
+console.log(cart)
+
 //
-////
 //     this.getItem.push(getItem)
 //     // We should be able to call
 //     // `cart.addItem(itemName, quantity, price)`,
@@ -50,4 +65,4 @@ console.log(cart.getItems());
 // //   }
 // }
 
-module.exports = ShoppingCart
+module.exports = { ShoppingCart };
