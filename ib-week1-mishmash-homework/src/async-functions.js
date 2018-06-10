@@ -31,7 +31,7 @@ const addSomePromises = pSomePromise => {
   });
 };
 
-const outputPromise = addSomePromises("bar")
+const outputPromise = addSomePromises("foo")
 .then(
   function(result) {
     console.log(result + result);
