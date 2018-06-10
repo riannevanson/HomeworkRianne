@@ -58,9 +58,9 @@ function pathFind (path, object){
     return object[path[0]];
   }
   else {
-    let key = path[0];
-    path.shift();
-    return pathFind(path, object[key]);
+    let firstPath = path[0];
+    const newPath = path.filter(function (pathItem) { return (pathItem !== firstPath)})
+    return pathFind(newPath, object[firstPath]);
 
   }
 }
@@ -128,4 +128,4 @@ console.log(
 //       }
 //     }) // === "Yuval"
 
-// module.exports = { pathFind};
+module.exports = { pathFind};
