@@ -19,14 +19,13 @@ class ShoppingCart {
   clear() {
     this.items = this.items.filter(item => item !== item);
   }
-  clone(pCartYouWantToClone) {
-    const cloneCart =  [
-      Object.assign(Object.create(pCartYouWantToClone), pCartYouWantToClone)
-    ];
+  clone(pCartYouWantToClone, pnewName) {
 
 
-    pCartYouWantToClone.map(x => x)
-    console.log(cloneCart2)
+    let cloneName =  Object.create(pCartYouWantToClone);
+    return cloneName
+
+
 //     function newCloneFunction(cloneC) {
 //     let  cloneCart = cloneC.map(clone => clone);
 //     return cloneCart
@@ -36,19 +35,21 @@ class ShoppingCart {
 }
 
 const cart = new ShoppingCart();
-
 cart.addItem("yu", 3, 2 + "addItems");
 cart.addItem("yuaaaaa", 4, 5.95 + "addItems");
 console.log(cart.getItems());
 console.log(cart)
 cart.clone(cart);
-const cloneCart = new ShoppingCart();
-
-console.log(cart.getItems());
-cart.clear();
-console.log(cart.getItems());
-console.log(cloneCart.getItems());
+const newcloneName = new ShoppingCart();
+cloneCart.clear()
 console.log(cart)
+console.log(cloneName)
+// console.log(cart.getItems());
+// cart.clear();
+// console.log(cart.getItems());
+// console.log(cloneCart.getItems());
+// console.log(cart)
+// console.log(cloneCart)
 
 //
 //     this.getItem.push(getItem)
