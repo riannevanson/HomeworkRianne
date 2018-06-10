@@ -19,26 +19,32 @@ class ShoppingCart {
   clear() {
     this.items = this.items.filter(item => item !== item);
   }
-  clone(pCartYouWantToClone) {
+  clone(pShoppingCart, pNewName) {
+    function cloneCart(pShoppingCart) {
+      let pNewName = pShoppingCart =>
+        Object.create(pShoppingCart).map(x => x);
+    return pNewName
+    }
 
-    let cloneCart = (pCartYouWantToClone) => (Object.create(pCartYouWantToClone)
-    .map(x => x))
-
+return pNewName
   }
 }
 
 const cart = new ShoppingCart();
 cart.addItem("yu", 3, 2 + "addItems");
-cart.addItem("yuaaaaa", 4, 5.95 + "addItems");
-console.log(cart.getItems());
-console.log(cart)
-cart.clone(cart, "cartje");
+// console.log(cart.getItems());
+// console.log(cart);
+cart.clone(cart, pietje);
 const cloneCart = new ShoppingCart();
-cart.clear()
-console.log(cart)
-console.log(cloneCart)
-console.log(cart)
-console.log(cloneCart)
+pietje.clear();
+console.log(cart);
+console.log(pietje);
+pietje.addItem("yu", 3, 2 + "addItems");
+cart.clear();
+console.log(cart);
+console.log(pietje);
+
+
 
 //
 //     this.getItem.push(getItem)
