@@ -21,22 +21,25 @@ class ShoppingCart {
     this.items = this.items.filter(item => item !== item);
   }
   clone() {
-    let cartClone = new ShoppingCart();
-    cartClone.items = this.items
-    return cartClone
+    // https://scotch.io/bar-talk/copying-objects-in-javascript
+    let copiedCart = JSON.parse(JSON.stringify(this));
+    return copiedCart
  }
 }
 
+
+//
 // const cart = new ShoppingCart();
 // cart.addItem("yu", 3, 2 + "addItems");
-// // console.log(cart.getItems());
-// console.log(cart);
 // let cloneCart = cart.clone();
+// cloneCart.items[0].name = 'XX';
+// // console.log(cart.getItems());
+// // console.log(cart);
 // console.log(cloneCart)
 // // cloneCart.clear();
-// //console.log(cart);
+// console.log(cart);
 // //console.log(cloneCart);
 // // cloneCart.addItem("yu", 3, 2 + "addItems");
-// cart.clear();
-// console.log(cart);
-// console.log(cloneCart);
+// // cart.clear();
+// // console.log(cart);
+// // console.log(cloneCart);
